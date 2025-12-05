@@ -1,22 +1,24 @@
 import datetime
+import os
+import shutil
+import mlflow
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
 
 # Constants used:
 current_date = datetime.datetime.now().strftime("%Y_%B_%d")
-data_gold_path = "./artifacts/train_data_gold.csv"
+data_gold_path = "/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/artifacts/train_data_gold.csv"
 data_version = "00000"
 experiment_name = current_date
 
-
-
-import os
-import shutil
 
 os.makedirs("artifacts", exist_ok=True)
 os.makedirs("mlruns", exist_ok=True)
 os.makedirs("mlruns/.trash", exist_ok=True)
 
 
-import mlflow
+
 
 mlflow.set_experiment(experiment_name)
 
@@ -41,8 +43,6 @@ cat_vars = data[cat_cols]
 other_vars = data.drop(cat_cols, axis=1)
 
 
-import pandas as pd
-
 for col in cat_vars:
     cat_vars[col] = cat_vars[col].astype("category")
     cat_vars = create_dummy_cols(cat_vars, col)
@@ -57,7 +57,6 @@ for col in data:
 y = data["lead_indicator"]
 X = data.drop(["lead_indicator"], axis=1)
 
-from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, random_state=42, test_size=0.15, stratify=y

@@ -9,6 +9,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 import joblib
 
+import subprocess
 
 def describe_numeric_col(x):
     """
@@ -54,7 +55,12 @@ pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
 
 
-!dvc pull
+
+# 1. Change directory
+os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks")
+
+# 2. Run DVC command
+subprocess.run(["dvc", "update", "artifacts/raw_data.csv"], check=True)
 
 
 print("Loading training data")
@@ -199,6 +205,6 @@ data['bin_source'] = data['source'].map(mapping)
 # data_gold = spark.createDataFrame(data)
 # data_gold.write.saveAsTable('train_gold')
 # dbutils.notebook.exit(('training_golden_data',most_recent_date))
-
+print("Saved training golden data")
 data.to_csv('./artifacts/train_data_gold.csv', index=False)
 
