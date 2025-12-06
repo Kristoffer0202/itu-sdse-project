@@ -1,27 +1,41 @@
 import pandas as pd
 import json
 import datetime
+import os
+import subprocess
+import pickle
 
+from Module.config import INTERIM_FILTERED_DATA_FILE, RAW_DATA_FILE, INTERRIM_DATE_LIMITS
 
-def read_data(data):
-    max_date = "2024-01-31"
-    min_date = "2024-01-01"
+# 1. Change directory
+# os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks")
 
-    if not max_date:
-        max_date = pd.to_datetime(datetime.datetime.now().date()).date()
-    else:
-        max_date = pd.to_datetime(max_date).date()
+# 2. Run DVC command
+subprocess.run(["dvc", "update", RAW_DATA_FILE], check=True)
 
-    min_date = pd.to_datetime(min_date).date()
+print("Loading training data")
+data = pd.read_csv(RAW_DATA_FILE)
 
-    # Time limit data
-    data["date_part"] = pd.to_datetime(data["date_part"]).dt.date
-    data = data[(data["date_part"] >= min_date) & (data["date_part"] <= max_date)]
+max_date = "2024-01-31"
+min_date = "2024-01-01"
 
-    min_date = data["date_part"].min()
-    max_date = data["date_part"].max()
-    date_limits = {"min_date": str(min_date), "max_date": str(max_date)}
-    with open("./artifacts/date_limits.json", "w") as f:
-        json.dump(date_limits, f) # Save date intervals
+if not max_date:
+    max_date = pd.to_datetime(datetime.datetime.now().date()).date()
+else:
+    max_date = pd.to_datetime(max_date).date()
+
+min_date = pd.to_datetime(min_date).date()
+
+# Time limit data
+data["date_part"] = pd.to_datetime(data["date_part"]).dt.date
+data = data[(data["date_part"] >= min_date) & (data["date_part"] <= max_date)]
+
+min_date = data["date_part"].min()
+max_date = data["date_part"].max()
+date_limits = {"min_date": str(min_date), "max_date": str(max_date)}
+with open(INTERRIM_DATE_LIMITS, "w") as f:
+    json.dump(date_limits, f) # Save date intervals
+
+filtered_data = data
+filtered_data.to_csv(INTERIM_FILTERED_DATA_FILE)
     
-    return data

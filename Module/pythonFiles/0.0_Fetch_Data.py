@@ -11,30 +11,6 @@ import joblib
 
 import subprocess
 
-def describe_numeric_col(x):
-    """
-    Parameters:
-        x (pd.Series): Pandas col to describe.
-    Output:
-        y (pd.Series): Pandas series with descriptive stats. 
-    """
-    return pd.Series(
-        [x.count(), x.isnull().count(), x.mean(), x.min(), x.max()],
-        index=["Count", "Missing", "Mean", "Min", "Max"]
-    )
-
-def impute_missing_values(x, method="mean"):
-    """
-    Parameters:
-        x (pd.Series): Pandas col to describe.
-        method (str): Values: "mean", "median"
-    """
-    if (x.dtype == "float64") | (x.dtype == "int64"):
-        x = x.fillna(x.mean()) if method=="mean" else x.fillna(x.median())
-    else:
-        x = x.fillna(x.mode()[0])
-    return x
-
 
 # dbutils.widgets.text("Training data max date", "2024-01-31")
 # dbutils.widgets.text("Training data min date", "2024-01-01")
@@ -55,7 +31,6 @@ pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
 
 
-
 # 1. Change directory
 os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks")
 
@@ -67,39 +42,6 @@ print("Loading training data")
 data = pd.read_csv("./artifacts/raw_data.csv")
 
 print("Total rows:", data.count())
-
-
-
-if not max_date:
-    max_date = pd.to_datetime(datetime.datetime.now().date()).date()
-else:
-    max_date = pd.to_datetime(max_date).date()
-
-min_date = pd.to_datetime(min_date).date()
-
-# Time limit data
-data["date_part"] = pd.to_datetime(data["date_part"]).dt.date
-data = data[(data["date_part"] >= min_date) & (data["date_part"] <= max_date)]
-
-min_date = data["date_part"].min()
-max_date = data["date_part"].max()
-date_limits = {"min_date": str(min_date), "max_date": str(max_date)}
-with open("./artifacts/date_limits.json", "w") as f:
-    json.dump(date_limits, f)
-
-
-data = data.drop(
-    [
-        "is_active", "marketing_consent", "first_booking", "existing_customer", "last_seen"
-    ],
-    axis=1
-)
-
-#Removing columns that will be added back after the EDA
-data = data.drop(
-    ["domain", "country", "visited_learn_more_before_booking", "visited_faq"],
-    axis=1
-)
 
 
 
