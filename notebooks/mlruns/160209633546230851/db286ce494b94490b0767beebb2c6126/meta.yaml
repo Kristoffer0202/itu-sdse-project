@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/db286ce494b94490b0767beebb2c6126/artifacts
+end_time: 1765032337789
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: db286ce494b94490b0767beebb2c6126
+run_name: carefree-worm-4
+run_uuid: db286ce494b94490b0767beebb2c6126
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765032337052
+status: 3
+tags: []
+user_id: efh

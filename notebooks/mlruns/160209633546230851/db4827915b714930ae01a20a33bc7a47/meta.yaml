@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/db4827915b714930ae01a20a33bc7a47/artifacts
+end_time: 1765032337789
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: db4827915b714930ae01a20a33bc7a47
+run_name: big-sheep-383
+run_uuid: db4827915b714930ae01a20a33bc7a47
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765032337052
+status: 3
+tags: []
+user_id: efh
