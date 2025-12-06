@@ -13,7 +13,11 @@ from sklearn.metrics import classification_report
 from pprint import pprint
 import pandas as pd
 import json
+import warnings
 
+
+warnings.filterwarnings('ignore')
+pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
 with open('train_test_data.pkl', 'rb') as f:
     X_train, X_test, y_train, y_test = pickle.load(f)

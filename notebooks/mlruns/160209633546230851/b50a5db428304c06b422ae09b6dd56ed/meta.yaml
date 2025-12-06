@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/b50a5db428304c06b422ae09b6dd56ed/artifacts
+end_time: 1765032400391
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: b50a5db428304c06b422ae09b6dd56ed
+run_name: rogue-hound-891
+run_uuid: b50a5db428304c06b422ae09b6dd56ed
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765032398203
+status: 3
+tags: []
+user_id: efh

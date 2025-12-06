@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/47f4977ae6bf4bc58a94d12cff722e46/artifacts
+end_time: 1765032337789
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: 47f4977ae6bf4bc58a94d12cff722e46
+run_name: abundant-rat-603
+run_uuid: 47f4977ae6bf4bc58a94d12cff722e46
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765032337052
+status: 3
+tags: []
+user_id: efh
