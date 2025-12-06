@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/00f70adca08049c18454364962d8a89e/artifacts
+end_time: 1765029669676
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: 00f70adca08049c18454364962d8a89e
+run_name: calm-lamb-660
+run_uuid: 00f70adca08049c18454364962d8a89e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765029669046
+status: 3
+tags: []
+user_id: efh

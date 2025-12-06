@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/cab0f7f4f17e4cf5ada47af7bb291ad4/artifacts
+end_time: 1765025106683
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: cab0f7f4f17e4cf5ada47af7bb291ad4
+run_name: learned-mole-793
+run_uuid: cab0f7f4f17e4cf5ada47af7bb291ad4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765025104317
+status: 3
+tags: []
+user_id: efh

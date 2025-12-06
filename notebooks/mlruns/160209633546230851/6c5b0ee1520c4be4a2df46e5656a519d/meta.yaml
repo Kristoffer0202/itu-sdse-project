@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/6c5b0ee1520c4be4a2df46e5656a519d/artifacts
+end_time: 1765029669676
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: 6c5b0ee1520c4be4a2df46e5656a519d
+run_name: delicate-penguin-376
+run_uuid: 6c5b0ee1520c4be4a2df46e5656a519d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765029669046
+status: 3
+tags: []
+user_id: efh

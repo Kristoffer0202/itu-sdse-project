@@ -1,11 +1,23 @@
 import mlflow.pyfunc
-
 from sklearn.linear_model import LogisticRegression
 import os
 from sklearn.metrics import cohen_kappa_score, f1_score
 import matplotlib.pyplot as plt
 import joblib
 import argparse
+import pickle
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+from pprint import pprint
+import pandas as pd
+import json
+
+
+with open('train_test_data.pkl', 'rb') as f:
+    X_train, X_test, y_train, y_test = pickle.load(f)
+
 
 
 ###################################
@@ -80,17 +92,38 @@ print(pd.crosstab(y_train, y_pred_train, rownames=['Actual'], colnames=['Predict
 print("Classification report\n")
 print(classification_report(y_train, y_pred_train),'\n')
 
+
+
+
+
+
+
+### old saving model scores
+# model_results[lr_model_path] = model_classification_report
+# print(model_classification_report["weighted avg"]["f1-score"])
+
+# column_list_path = './artifacts/columns_list.json'
+# with open(column_list_path, 'w+') as columns_file:
+#     columns = {'column_names': list(X_train.columns)}
+#     pprint(columns)
+#     json.dump(columns, columns_file)
+
+# print('Saved column list to ', column_list_path)
+
+# model_results_path = "./artifacts/model_results.json"
+
+# with open(model_results_path, 'w+') as results_file:
+#     json.dump(model_results, results_file)
+
+
+with open("./artifacts/model_results.json", 'r') as results_file:
+    model_results = json.load(results_file)
+
+model_classification_report = classification_report(y_test, y_pred_test, output_dict=True)
 model_results[lr_model_path] = model_classification_report
-print(model_classification_report["weighted avg"]["f1-score"])
-
-column_list_path = './artifacts/columns_list.json'
-with open(column_list_path, 'w+') as columns_file:
-    columns = {'column_names': list(X_train.columns)}
-    pprint(columns)
-    json.dump(columns, columns_file)
-
-print('Saved column list to ', column_list_path)
 
 model_results_path = "./artifacts/model_results.json"
 with open(model_results_path, 'w+') as results_file:
     json.dump(model_results, results_file)
+
+

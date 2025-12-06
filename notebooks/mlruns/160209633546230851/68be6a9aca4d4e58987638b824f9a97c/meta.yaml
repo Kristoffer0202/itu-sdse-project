@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/68be6a9aca4d4e58987638b824f9a97c/artifacts
+end_time: 1765031169697
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: 68be6a9aca4d4e58987638b824f9a97c
+run_name: intelligent-mink-641
+run_uuid: 68be6a9aca4d4e58987638b824f9a97c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765031169334
+status: 3
+tags: []
+user_id: efh

@@ -1,13 +1,29 @@
-# Constants used:
-current_date = datetime.datetime.now().strftime("%Y_%B_%d")
-artifact_path = "model"
-model_name = "lead_model"
-experiment_name = current_date
-
 import time
+import mlflow
 from mlflow.tracking.client import MlflowClient
 from mlflow.entities.model_registry.model_version_status import ModelVersionStatus
 from mlflow.tracking.client import MlflowClient
+import argparse
+import pandas as pd
+from mlflow.tracking import MlflowClient
+import json
+
+
+
+#  Constants used:
+artifact_path = "model"
+model_name = "lead_model"
+
+
+###################################
+parser = argparse.ArgumentParser()
+parser.add_argument("--run_name", required=True)
+args = parser.parse_args()
+print("Run name:", args.run_name)
+experiment_name = args.run_name
+###################################
+
+
 
 def wait_until_ready(model_name, model_version):
     client = MlflowClient()
@@ -32,7 +48,6 @@ experiment_best = mlflow.search_runs(
 ).iloc[0]
 experiment_best
 
-import json
 
 with open("./artifacts/model_results.json", "r") as f:
     model_results = json.load(f)
@@ -42,7 +57,6 @@ results_df
 best_model = results_df.sort_values("f1-score", ascending=False).iloc[0].name
 print(f"Best model: {best_model}")
 
-from mlflow.tracking import MlflowClient
 
 client = MlflowClient()
 prod_model = [model for model in client.search_model_versions(f"name='{model_name}'") if dict(model)['current_stage']=='Production']

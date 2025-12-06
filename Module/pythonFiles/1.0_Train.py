@@ -5,6 +5,8 @@ import mlflow
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import argparse
+import pickle
+
 
 
 ###################################
@@ -72,3 +74,11 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, random_state=42, test_size=0.15, stratify=y
 )
 y_train
+
+
+# Assuming X_train, X_test, y_train, y_test already exist
+
+with open('train_test_data.pkl', 'wb') as f:
+    pickle.dump((X_train, X_test, y_train, y_test), f)
+
+

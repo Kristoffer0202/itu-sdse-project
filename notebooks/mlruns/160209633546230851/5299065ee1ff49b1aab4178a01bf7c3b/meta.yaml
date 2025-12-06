@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/5299065ee1ff49b1aab4178a01bf7c3b/artifacts
+end_time: 1765025104826
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: 5299065ee1ff49b1aab4178a01bf7c3b
+run_name: upset-shark-768
+run_uuid: 5299065ee1ff49b1aab4178a01bf7c3b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765025104317
+status: 3
+tags: []
+user_id: efh

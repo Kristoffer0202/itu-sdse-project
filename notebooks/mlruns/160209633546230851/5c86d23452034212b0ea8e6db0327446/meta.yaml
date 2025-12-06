@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/5c86d23452034212b0ea8e6db0327446/artifacts
+end_time: 1765029724237
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: 5c86d23452034212b0ea8e6db0327446
+run_name: capable-finch-29
+run_uuid: 5c86d23452034212b0ea8e6db0327446
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765029723581
+status: 3
+tags: []
+user_id: efh

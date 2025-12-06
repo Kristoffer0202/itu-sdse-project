@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/e318bafa5670472f889d606c04201354/artifacts
+end_time: 1765031171689
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: e318bafa5670472f889d606c04201354
+run_name: colorful-smelt-773
+run_uuid: e318bafa5670472f889d606c04201354
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765031169334
+status: 3
+tags: []
+user_id: efh

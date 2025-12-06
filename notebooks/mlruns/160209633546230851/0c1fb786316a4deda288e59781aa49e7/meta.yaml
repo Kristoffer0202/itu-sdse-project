@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/0c1fb786316a4deda288e59781aa49e7/artifacts
+end_time: 1765030996942
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: 0c1fb786316a4deda288e59781aa49e7
+run_name: righteous-yak-428
+run_uuid: 0c1fb786316a4deda288e59781aa49e7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765030994667
+status: 3
+tags: []
+user_id: efh

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/0c0d37ca874248a8985de45d8a4cbff3/artifacts
+end_time: 1765025104826
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: 0c0d37ca874248a8985de45d8a4cbff3
+run_name: blushing-cat-504
+run_uuid: 0c0d37ca874248a8985de45d8a4cbff3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765025104317
+status: 3
+tags: []
+user_id: efh

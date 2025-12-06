@@ -1,6 +1,14 @@
+from mlflow.tracking import MlflowClient
+import time
+artifact_path = "model"
+model_name = "lead_model"
+
+
+
+
+
 model_version = 1
 
-from mlflow.tracking import MlflowClient
 
 client = MlflowClient()
 

@@ -2,6 +2,31 @@ from xgboost import XGBRFClassifier
 from sklearn.model_selection import RandomizedSearchCV
 from scipy.stats import uniform
 from scipy.stats import randint
+import pickle
+import pandas as pd
+import argparse
+import pickle
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+from pprint import pprint
+import json
+
+
+with open('train_test_data.pkl', 'rb') as f:
+    X_train, X_test, y_train, y_test = pickle.load(f)
+
+###################################
+parser = argparse.ArgumentParser()
+parser.add_argument("--run_name", required=True)
+args = parser.parse_args()
+print("Run name:", args.run_name)
+experiment_name = args.run_name
+###################################
+
+
+
+
 
 model = XGBRFClassifier(random_state=42)
 params = {
@@ -17,7 +42,7 @@ model_grid = RandomizedSearchCV(model, param_distributions=params, n_jobs=-1, ve
 
 model_grid.fit(X_train, y_train)
 
-from sklearn.metrics import accuracy_score
+
 
 best_model_xgboost_params = model_grid.best_params_
 print("Best xgboost params")
@@ -29,8 +54,7 @@ print("Accuracy train", accuracy_score(y_pred_train, y_train ))
 print("Accuracy test", accuracy_score(y_pred_test, y_test))
 
 
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
+
 
 conf_matrix = confusion_matrix(y_test, y_pred_test)
 print("Test actual/predicted\n")
@@ -51,3 +75,8 @@ xgboost_model.save_model(xgboost_model_path)
 model_results = {
     xgboost_model_path: classification_report(y_train, y_pred_train, output_dict=True)
 }
+
+#saving model scores
+model_results_path = "./artifacts/model_results.json"
+with open(model_results_path, 'w+') as results_file:
+    json.dump(model_results, results_file)
