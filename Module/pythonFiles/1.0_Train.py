@@ -4,13 +4,23 @@ import shutil
 import mlflow
 import pandas as pd
 from sklearn.model_selection import train_test_split
+import argparse
+
+
+###################################
+parser = argparse.ArgumentParser()
+parser.add_argument("--run_name", required=True)
+args = parser.parse_args()
+print("Run name:", args.run_name)
+experiment_name = args.run_name
+###################################
 
 
 # Constants used:
-current_date = datetime.datetime.now().strftime("%Y_%B_%d")
+#current_date = datetime.datetime.now().strftime("%Y_%B_%d")
 data_gold_path = "/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/artifacts/train_data_gold.csv"
 data_version = "00000"
-experiment_name = current_date
+#experiment_name = current_date
 
 
 os.makedirs("artifacts", exist_ok=True)

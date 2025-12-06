@@ -5,6 +5,17 @@ import os
 from sklearn.metrics import cohen_kappa_score, f1_score
 import matplotlib.pyplot as plt
 import joblib
+import argparse
+
+
+###################################
+parser = argparse.ArgumentParser()
+parser.add_argument("--run_name", required=True)
+args = parser.parse_args()
+print("Run name:", args.run_name)
+experiment_name = args.run_name
+###################################
+
 
 class lr_wrapper(mlflow.pyfunc.PythonModel):
     def __init__(self, model):
