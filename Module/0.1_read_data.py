@@ -3,7 +3,6 @@ import json
 import datetime
 import os
 import subprocess
-import pickle
 
 from config import DATA_FILTERED_FILE, RAW_DATA_FILE, DATE_LIMITS_FILE, PROJ_ROOT
 
@@ -11,8 +10,8 @@ from config import DATA_FILTERED_FILE, RAW_DATA_FILE, DATE_LIMITS_FILE, PROJ_ROO
 # os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks")
 
 # 2. Run DVC command
-# subprocess.run(["dvc", "update", f"{RAW_DATA_FILE}.dvc"], check=True, cwd=PROJ_ROOT)
-# subprocess.run(["dvc", "pull"], check=True, cwd=PROJ_ROOT)
+subprocess.run(["dvc", "update", f"{RAW_DATA_FILE}.dvc"], check=True, cwd=PROJ_ROOT)
+subprocess.run(["dvc", "pull"], check=True, cwd=PROJ_ROOT)
 
 
 print("Loading training data")

@@ -24,6 +24,7 @@ DATA_FILTERED_FILE = INTERIM_DATA_DIR / "data_filtered.csv"
 COLUMNS_DRIFT_FILE = ARTIFACTS_DIR / "columns_drift.json"
 SCALE_FILE = ARTIFACTS_DIR / "scaler.pkl"
 OUTLIER_SUMMARY_FILE = ARTIFACTS_DIR / "outlier_summary.json"
+CAT_MISSING_IMPUTE_FILE = ARTIFACTS_DIR / "cat_missing_impute.csv"
 TRAINING_DATA_FILE = PROCESSED_DATA_DIR / "training_data.csv"
 TRAINING_GOLD_DATA_FILE = PROCESSED_DATA_DIR / "train_data_gold.csv"
 

@@ -5,7 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 import joblib
 import pickle
 import numpy as np
-from config import DATA_FILTERED_FILE, COLUMNS_DRIFT_FILE, TRAINING_DATA_FILE,TRAINING_GOLD_DATA_FILE, SCALE_FILE
+from config import DATA_FILTERED_FILE, COLUMNS_DRIFT_FILE, TRAINING_DATA_FILE,TRAINING_GOLD_DATA_FILE, SCALE_FILE, OUTLIER_SUMMARY_FILE, CAT_MISSING_IMPUTE_FILE
 
 import json
 
@@ -33,14 +33,14 @@ def outlier_handling(cont_vars):
     new_cont_vars = cont_vars.apply(lambda x: x.clip(lower = (x.mean()-2*x.std()),
                                              upper = (x.mean()+2*x.std())))
     outlier_summary = cont_vars.apply(describe_numeric_col).T
-    outlier_summary.to_csv(f'{INTERIM_DATA_DIR}/outlier_summary.csv')
+    outlier_summary.to_csv(OUTLIER_SUMMARY_FILE)
     outlier_summary
     return new_cont_vars
 
 def imputation(cont_vars, cat_vars):
 
     cat_missing_impute = cat_vars.mode(numeric_only=False, dropna=True)
-    cat_missing_impute.to_csv(f"{INTERIM_DATA_DIR}/cat_missing_impute.csv")
+    cat_missing_impute.to_csv(CAT_MISSING_IMPUTE_FILE)
 
     # Continuous variables missing values
     cont_vars = cont_vars.apply(impute_missing_values)
@@ -64,8 +64,7 @@ def scaler(cont_vars):
     cont_vars = pd.DataFrame(scaler.transform(cont_vars), columns=cont_vars.columns)
     return cont_vars
 
-with open(DATA_FILTERED_FILE, "rb") as f:
-    data = pickle.load(f)
+data = pd.read_csv(DATA_FILTERED_FILE)
 
 data = data.drop(
     [
