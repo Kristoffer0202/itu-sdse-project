@@ -5,7 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 import joblib
 import pickle
 import numpy as np
-from Module.config import INTERIM_FILTERED_DATA_FILE, INTERIM_COLUMNS_DRIFT_FILE, TRAINING_DATA_FILE,TRAINING_GOLD_DATA_FILE, INTERIM_SCALER_FILE
+from config import DATA_FILTERED_FILE, COLUMNS_DRIFT_FILE, TRAINING_DATA_FILE,TRAINING_GOLD_DATA_FILE, SCALE_FILE
 
 import json
 
@@ -53,7 +53,7 @@ def imputation(cont_vars, cat_vars):
     return cont_vars, cat_vars
 
 def scaler(cont_vars):
-    scaler_path = INTERIM_SCALER_FILE
+    scaler_path = SCALE_FILE
 
     scaler = MinMaxScaler()
     scaler.fit(cont_vars)
@@ -64,7 +64,7 @@ def scaler(cont_vars):
     cont_vars = pd.DataFrame(scaler.transform(cont_vars), columns=cont_vars.columns)
     return cont_vars
 
-with open(INTERIM_FILTERED_DATA_FILE, "rb") as f:
+with open(DATA_FILTERED_FILE, "rb") as f:
     data = pickle.load(f)
 
 data = data.drop(
@@ -101,7 +101,7 @@ print(f"Data cleansed and combined.\nRows: {len(data)}")
 
 
 data_columns = list(data.columns)
-with open(INTERIM_COLUMNS_DRIFT_FILE,'w+') as f:           
+with open(COLUMNS_DRIFT_FILE,'w+') as f:           
     json.dump(data_columns,f)
     
 data.to_csv(TRAINING_DATA_FILE, index=False)

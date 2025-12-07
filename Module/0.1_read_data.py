@@ -5,13 +5,15 @@ import os
 import subprocess
 import pickle
 
-from Module.config import INTERIM_FILTERED_DATA_FILE, RAW_DATA_FILE, INTERRIM_DATE_LIMITS
+from config import DATA_FILTERED_FILE, RAW_DATA_FILE, DATE_LIMITS_FILE, PROJ_ROOT
 
 # 1. Change directory
 # os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks")
 
 # 2. Run DVC command
-subprocess.run(["dvc", "update", RAW_DATA_FILE], check=True)
+# subprocess.run(["dvc", "update", f"{RAW_DATA_FILE}.dvc"], check=True, cwd=PROJ_ROOT)
+# subprocess.run(["dvc", "pull"], check=True, cwd=PROJ_ROOT)
+
 
 print("Loading training data")
 data = pd.read_csv(RAW_DATA_FILE)
@@ -33,9 +35,9 @@ data = data[(data["date_part"] >= min_date) & (data["date_part"] <= max_date)]
 min_date = data["date_part"].min()
 max_date = data["date_part"].max()
 date_limits = {"min_date": str(min_date), "max_date": str(max_date)}
-with open(INTERRIM_DATE_LIMITS, "w") as f:
+with open(DATE_LIMITS_FILE, "w") as f:
     json.dump(date_limits, f) # Save date intervals
 
 filtered_data = data
-filtered_data.to_csv(INTERIM_FILTERED_DATA_FILE)
+filtered_data.to_csv(DATA_FILTERED_FILE)
     
