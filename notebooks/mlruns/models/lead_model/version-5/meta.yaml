@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1765191899102
+current_stage: None
+description: null
+last_updated_timestamp: 1765191899102
+name: lead_model
+run_id: b5b5d7ecfa0046fabefead93947ff46c
+run_link: null
+source: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/738062761192912793/b5b5d7ecfa0046fabefead93947ff46c/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/738062761192912793/b5b5d7ecfa0046fabefead93947ff46c/artifacts/model
+user_id: null
+version: 5

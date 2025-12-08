@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/738062761192912793/b5b5d7ecfa0046fabefead93947ff46c/artifacts
+end_time: 1765191897864
+entry_point_name: ''
+experiment_id: '738062761192912793'
+lifecycle_stage: active
+run_id: b5b5d7ecfa0046fabefead93947ff46c
+run_name: stylish-loon-127
+run_uuid: b5b5d7ecfa0046fabefead93947ff46c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765191895389
+status: 3
+tags: []
+user_id: efh
