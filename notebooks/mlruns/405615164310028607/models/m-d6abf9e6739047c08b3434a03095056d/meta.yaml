@@ -1,0 +1,10 @@
+artifact_location: file:///mnt/c/Users/krist/Desktop/ITU/5_semester/MLops/EXAM/itu-sdse-project/notebooks/mlruns/405615164310028607/models/m-d6abf9e6739047c08b3434a03095056d/artifacts
+creation_timestamp: 1765198371742
+experiment_id: '405615164310028607'
+last_updated_timestamp: 1765198419469
+model_id: m-d6abf9e6739047c08b3434a03095056d
+model_type: null
+name: model
+source_run_id: e4ce128a43da4b5d8c0fc74af1d81105
+status: 2
+status_message: null

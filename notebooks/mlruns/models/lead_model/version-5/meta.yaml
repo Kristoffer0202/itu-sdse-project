@@ -1,0 +1,15 @@
+creation_timestamp: 1765198436078
+current_stage: None
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1765198436078
+model_id: m-d6abf9e6739047c08b3434a03095056d
+name: lead_model
+run_id: e4ce128a43da4b5d8c0fc74af1d81105
+run_link: null
+source: models:/m-d6abf9e6739047c08b3434a03095056d
+status: READY
+status_message: null
+storage_location: file:///mnt/c/Users/krist/Desktop/ITU/5_semester/MLops/EXAM/itu-sdse-project/notebooks/mlruns/405615164310028607/models/m-d6abf9e6739047c08b3434a03095056d/artifacts
+user_id: null
+version: 5

@@ -1,0 +1,19 @@
+artifact_path: file:///mnt/c/Users/krist/Desktop/ITU/5_semester/MLops/EXAM/itu-sdse-project/notebooks/mlruns/405615164310028607/models/m-d6abf9e6739047c08b3434a03095056d/artifacts
+flavors:
+  python_function:
+    cloudpickle_version: 3.1.2
+    code: null
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pyfunc.model
+    python_model: python_model.pkl
+    python_version: 3.10.12
+    streamable: false
+mlflow_version: 3.7.0
+model_id: m-d6abf9e6739047c08b3434a03095056d
+model_size_bytes: 2017
+model_uuid: m-d6abf9e6739047c08b3434a03095056d
+prompts: null
+run_id: e4ce128a43da4b5d8c0fc74af1d81105
+utc_time_created: '2025-12-08 12:52:53.134967'

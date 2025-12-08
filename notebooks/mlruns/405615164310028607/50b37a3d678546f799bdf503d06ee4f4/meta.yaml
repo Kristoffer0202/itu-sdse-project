@@ -1,0 +1,14 @@
+artifact_uri: file:///mnt/c/Users/krist/Desktop/ITU/5_semester/MLops/EXAM/itu-sdse-project/notebooks/mlruns/405615164310028607/50b37a3d678546f799bdf503d06ee4f4/artifacts
+end_time: 1765198369574
+entry_point_name: ''
+experiment_id: '405615164310028607'
+lifecycle_stage: active
+run_id: 50b37a3d678546f799bdf503d06ee4f4
+run_name: stately-wasp-657
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765198367443
+status: 3
+tags: []
+user_id: kristoffer

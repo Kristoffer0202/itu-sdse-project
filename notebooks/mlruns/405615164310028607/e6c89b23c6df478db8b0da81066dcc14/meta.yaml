@@ -1,0 +1,14 @@
+artifact_uri: file:///mnt/c/Users/krist/Desktop/ITU/5_semester/MLops/EXAM/itu-sdse-project/notebooks/mlruns/405615164310028607/e6c89b23c6df478db8b0da81066dcc14/artifacts
+end_time: 1765198369574
+entry_point_name: ''
+experiment_id: '405615164310028607'
+lifecycle_stage: active
+run_id: e6c89b23c6df478db8b0da81066dcc14
+run_name: bouncy-fish-296
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765198367443
+status: 3
+tags: []
+user_id: kristoffer

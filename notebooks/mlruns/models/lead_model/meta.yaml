@@ -1,5 +1,7 @@
 aliases: {}
 creation_timestamp: 1765030998236
+deployment_job_id: null
+deployment_job_state: null
 description: null
-last_updated_timestamp: 1765032401852
+last_updated_timestamp: 1765198436078
 name: lead_model

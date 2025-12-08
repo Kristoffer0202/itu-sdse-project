@@ -1,0 +1,14 @@
+artifact_uri: file:///mnt/c/Users/krist/Desktop/ITU/5_semester/MLops/EXAM/itu-sdse-project/notebooks/mlruns/405615164310028607/e4ce128a43da4b5d8c0fc74af1d81105/artifacts
+end_time: 1765198420344
+entry_point_name: ''
+experiment_id: '405615164310028607'
+lifecycle_stage: active
+run_id: e4ce128a43da4b5d8c0fc74af1d81105
+run_name: legendary-fowl-992
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765198367443
+status: 3
+tags: []
+user_id: kristoffer
