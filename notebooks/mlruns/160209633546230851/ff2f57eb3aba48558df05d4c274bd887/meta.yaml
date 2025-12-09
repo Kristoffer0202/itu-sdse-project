@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/mlruns/160209633546230851/ff2f57eb3aba48558df05d4c274bd887/artifacts
+end_time: 1765037167792
+entry_point_name: ''
+experiment_id: '160209633546230851'
+lifecycle_stage: active
+run_id: ff2f57eb3aba48558df05d4c274bd887
+run_name: kindly-zebra-421
+run_uuid: ff2f57eb3aba48558df05d4c274bd887
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765037167351
+status: 3
+tags: []
+user_id: efh

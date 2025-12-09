@@ -6,12 +6,21 @@ import subprocess
 import warnings
 from Module.config import DATA_FILTERED_FILE, RAW_DATA_FILE, DATE_LIMITS_FILE, PROJ_ROOT
 
+<<<<<<< Updated upstream
 os.makedirs("artifacts",exist_ok=True)
 print("Created artifacts directory")
 
 warnings.filterwarnings('ignore')
 pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
+=======
+from config import INTERIM_FILTERED_DATA_FILE, RAW_DATA_FILE, INTERRIM_DATE_LIMITS
+
+#
+# 1. Change directory
+os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project")
+
+>>>>>>> Stashed changes
 
 # 2. Run DVC command
 subprocess.run(["dvc", "update", "data/raw/raw_data.csv.dvc"], check=True, cwd=PROJ_ROOT)

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/Module/mlruns/327857665593664047/a45c3ed4e1724f08854e4f440a64e337/artifacts
+end_time: 1765037382889
+entry_point_name: ''
+experiment_id: '327857665593664047'
+lifecycle_stage: active
+run_id: a45c3ed4e1724f08854e4f440a64e337
+run_name: incongruous-gnat-158
+run_uuid: a45c3ed4e1724f08854e4f440a64e337
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765037382520
+status: 3
+tags: []
+user_id: efh

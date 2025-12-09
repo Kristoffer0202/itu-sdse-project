@@ -32,7 +32,7 @@ pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
 
 # 1. Change directory
-os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks")
+os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project/Module")
 
 # 2. Run DVC command
 subprocess.run(["dvc", "update", "artifacts/raw_data.csv"], check=True)

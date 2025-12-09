@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/efh/Desktop/MLOP_project/itu-sdse-project/Module/mlruns/327857665593664047/520435b6c03d4cb4867fac814373d4ed/artifacts
+end_time: 1765037382889
+entry_point_name: ''
+experiment_id: '327857665593664047'
+lifecycle_stage: active
+run_id: 520435b6c03d4cb4867fac814373d4ed
+run_name: gentle-penguin-109
+run_uuid: 520435b6c03d4cb4867fac814373d4ed
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765037382520
+status: 3
+tags: []
+user_id: efh
