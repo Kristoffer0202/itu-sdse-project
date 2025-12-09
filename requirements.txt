@@ -1,26 +1,26 @@
 joblib==1.5.2
 pandas
 
-# loguru==0.7.3
-# matplotlib==3.10.7
-# mlflow==3.7.0
-# mlflow_skinny==3.7.0
-# mlflow_tracing==3.7.0
-# numpy==2.3.5
-# pandas==2.3.3
-# python-dotenv==1.2.1
-# scikit_learn==1.7.2
-# scipy==1.16.3
-# tqdm==4.67.1
-# typer==0.20.0
-# xgboost==3.1.2
-# loguru
-# mkdocs
-# pip
-# python-dotenv
-# ruff
-# tqdm
-# typer
--e file:///src/Module
+loguru==0.7.3
+matplotlib==3.10.7
+mlflow==3.7.0
+mlflow_skinny==3.7.0
+mlflow_tracing==3.7.0
+numpy==2.3.5
+pandas==2.3.3
+python-dotenv==1.2.1
+scikit_learn==1.7.2
+scipy==1.16.3
+tqdm==4.67.1
+typer==0.20.0
+xgboost==3.1.2
+loguru
+mkdocs
+pip
+python-dotenv
+ruff
+tqdm
+typer
+#s-e file:///src/Module
 
 #-e .
