@@ -4,23 +4,26 @@ import datetime
 import os
 import subprocess
 import warnings
-from Module.config import DATA_FILTERED_FILE, RAW_DATA_FILE, DATE_LIMITS_FILE, PROJ_ROOT
+from config import (
+    DATA_FILTERED_FILE, 
+    RAW_DATA_FILE, 
+    DATE_LIMITS_FILE, 
+    PROJ_ROOT,
+    MAX_DATE,
+    MIN_DATE,
+    )
 
-<<<<<<< Updated upstream
+######## Constants used
+max_date = MAX_DATE
+min_date = MIN_DATE
+########################
+
 os.makedirs("artifacts",exist_ok=True)
 print("Created artifacts directory")
 
 warnings.filterwarnings('ignore')
 pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
-=======
-from config import INTERIM_FILTERED_DATA_FILE, RAW_DATA_FILE, INTERRIM_DATE_LIMITS
-
-#
-# 1. Change directory
-os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project")
-
->>>>>>> Stashed changes
 
 # 2. Run DVC command
 subprocess.run(["dvc", "update", "data/raw/raw_data.csv.dvc"], check=True, cwd=PROJ_ROOT)
@@ -30,8 +33,7 @@ subprocess.run(["dvc", "pull"], check=True, cwd=PROJ_ROOT)
 print("Loading training data")
 data = pd.read_csv(RAW_DATA_FILE)
 
-max_date = "2024-01-31"
-min_date = "2024-01-01"
+
 
 if not max_date:
     max_date = pd.to_datetime(datetime.datetime.now().date()).date()

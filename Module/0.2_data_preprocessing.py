@@ -5,9 +5,17 @@ from sklearn.preprocessing import MinMaxScaler
 import joblib
 import pickle
 import numpy as np
-from config import DATA_FILTERED_FILE, COLUMNS_DRIFT_FILE, TRAINING_DATA_FILE,TRAINING_GOLD_DATA_FILE, SCALE_FILE, OUTLIER_SUMMARY_FILE, CAT_MISSING_IMPUTE_FILE
-
 import json
+
+from config import (
+    DATA_FILTERED_FILE, 
+    COLUMNS_DRIFT_FILE, 
+    TRAINING_DATA_FILE,
+    TRAINING_GOLD_DATA_FILE,
+    SCALE_FILE, 
+    OUTLIER_SUMMARY_FILE, 
+    CAT_MISSING_IMPUTE_FILE
+)
 
 def seperate_columns(data):
 
@@ -117,8 +125,5 @@ mapping = {'li' : 'socials',
 data['bin_source'] = data['source'].map(mapping)
 
 
-# data_gold = spark.createDataFrame(data)
-# data_gold.write.saveAsTable('train_gold')
-# dbutils.notebook.exit(('training_golden_data',most_recent_date))
 print("Saved training golden data")
 data.to_csv(TRAINING_GOLD_DATA_FILE, index=False)
