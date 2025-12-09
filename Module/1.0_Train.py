@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 import argparse
 import pickle
 
-
+from config import TRAINING_GOLD_DATA_FILE
 
 ###################################
 parser = argparse.ArgumentParser()
@@ -20,7 +20,7 @@ experiment_name = args.run_name
 
 # Constants used:
 #current_date = datetime.datetime.now().strftime("%Y_%B_%d")
-data_gold_path = "/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks/artifacts/train_data_gold.csv"
+data_gold_path = TRAINING_GOLD_DATA_FILE
 data_version = "00000"
 #experiment_name = current_date
 
@@ -28,8 +28,6 @@ data_version = "00000"
 os.makedirs("artifacts", exist_ok=True)
 os.makedirs("mlruns", exist_ok=True)
 os.makedirs("mlruns/.trash", exist_ok=True)
-
-
 
 
 mlflow.set_experiment(experiment_name)

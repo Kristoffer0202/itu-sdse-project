@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Module"
+version = "0.1.0"
+description = "My local module"
+authors = [{name="elhekrisc"}]
+dependencies = []  # put PyPI dependencies if any

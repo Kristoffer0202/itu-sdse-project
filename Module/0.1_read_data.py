@@ -3,14 +3,18 @@ import json
 import datetime
 import os
 import subprocess
+import warnings
+from Module.config import DATA_FILTERED_FILE, RAW_DATA_FILE, DATE_LIMITS_FILE, PROJ_ROOT
 
-from config import DATA_FILTERED_FILE, RAW_DATA_FILE, DATE_LIMITS_FILE, PROJ_ROOT
+os.makedirs("artifacts",exist_ok=True)
+print("Created artifacts directory")
 
-# 1. Change directory
-# os.chdir("/Users/efh/Desktop/MLOP_project/itu-sdse-project/notebooks")
+warnings.filterwarnings('ignore')
+pd.set_option('display.float_format',lambda x: "%.3f" % x)
+
 
 # 2. Run DVC command
-subprocess.run(["dvc", "update", f"{RAW_DATA_FILE}.dvc"], check=True, cwd=PROJ_ROOT)
+subprocess.run(["dvc", "update", "data/raw/raw_data.csv.dvc"], check=True, cwd=PROJ_ROOT)
 subprocess.run(["dvc", "pull"], check=True, cwd=PROJ_ROOT)
 
 

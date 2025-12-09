@@ -2,6 +2,10 @@
 ##/data/
 data/raw/raw_data.csv
 
+# Notebooks
+notebooks/mlruns/
+notebooks/artifacts/
+
 # Mac OS-specific storage files
 .DS_Store
 

@@ -29,12 +29,13 @@ func Build(ctx context.Context) error {
 	// python := client.Container().From("python:3.12.2-bookworm").
 	// 	WithDirectory("python", client.Host().Directory("../Module")).
 	// 	WithExec([]string{"python", "--version"})
+
 	python := client.Container().
 		From("python:3.12.2-bookworm").
-		WithDirectory("/src", client.Host().Directory("../")).
-		WithWorkdir("/src/Module").
-		WithExec([]string{"pip", "install", "-r", "/src/requirements.txt"}).
-		WithExec([]string{"python", "python/0.1_read_data.py"})
+		WithDirectory("/src", client.Host().Directory("../")).               // mounts entire repo
+		WithWorkdir("/src/Module").                                          // set workdir to Module
+		WithExec([]string{"pip", "install", "-r", "/src/requirements.txt"}). // repo root
+		WithExec([]string{"python", "0.1_read_data.py"})                     // workdir script
 
 	_, err = python.
 		Directory("output").
