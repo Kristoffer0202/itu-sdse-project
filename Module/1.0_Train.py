@@ -7,7 +7,10 @@ from sklearn.model_selection import train_test_split
 import argparse
 import pickle
 
-from config import TRAINING_GOLD_DATA_FILE
+from config import (
+    TRAINING_GOLD_DATA_FILE,
+    DATA_VERSION,
+)
 
 ###################################
 parser = argparse.ArgumentParser()
@@ -19,9 +22,8 @@ experiment_name = args.run_name
 
 
 # Constants used:
-#current_date = datetime.datetime.now().strftime("%Y_%B_%d")
 data_gold_path = TRAINING_GOLD_DATA_FILE
-data_version = "00000"
+data_version = DATA_VERSION
 #experiment_name = current_date
 
 
@@ -72,9 +74,6 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, random_state=42, test_size=0.15, stratify=y
 )
 y_train
-
-
-# Assuming X_train, X_test, y_train, y_test already exist
 
 with open('train_test_data.pkl', 'wb') as f:
     pickle.dump((X_train, X_test, y_train, y_test), f)

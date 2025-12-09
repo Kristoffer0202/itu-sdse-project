@@ -4,7 +4,19 @@ import datetime
 import os
 import subprocess
 import warnings
-from config import DATA_FILTERED_FILE, RAW_DATA_FILE, DATE_LIMITS_FILE, PROJ_ROOT
+from config import (
+    DATA_FILTERED_FILE, 
+    RAW_DATA_FILE, 
+    DATE_LIMITS_FILE, 
+    PROJ_ROOT,
+    MAX_DATE,
+    MIN_DATE,
+    )
+
+######## Constants used
+max_date = MAX_DATE
+min_date = MIN_DATE
+########################
 
 os.makedirs("artifacts",exist_ok=True)
 print("Created artifacts directory")
@@ -21,8 +33,7 @@ subprocess.run(["dvc", "pull"], check=True, cwd=PROJ_ROOT)
 print("Loading training data")
 data = pd.read_csv(RAW_DATA_FILE)
 
-max_date = "2024-01-31"
-min_date = "2024-01-01"
+
 
 if not max_date:
     max_date = pd.to_datetime(datetime.datetime.now().date()).date()

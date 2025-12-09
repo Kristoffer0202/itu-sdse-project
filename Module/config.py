@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import datetime
 from dotenv import load_dotenv
 from loguru import logger
 
@@ -27,6 +27,12 @@ OUTLIER_SUMMARY_FILE = ARTIFACTS_DIR / "outlier_summary.json"
 CAT_MISSING_IMPUTE_FILE = ARTIFACTS_DIR / "cat_missing_impute.csv"
 TRAINING_DATA_FILE = PROCESSED_DATA_DIR / "training_data.csv"
 TRAINING_GOLD_DATA_FILE = PROCESSED_DATA_DIR / "train_data_gold.csv"
+
+MAX_DATE = "2024-01-31"
+MIN_DATE = "2024-01-01"
+DATA_VERSION = "00000"
+CURRENT_DATE = datetime.datetime.now().strftime("%Y_%B_%d")
+EXPERIMENT_NAME = CURRENT_DATE
 
 MODELS_DIR = PROJ_ROOT / "models"
 
