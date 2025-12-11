@@ -5,15 +5,12 @@ import mlflow
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import argparse
-# import pickle
+import pickle
 
 from config import (
     TRAINING_GOLD_DATA_FILE,
     DATA_VERSION,
-    X_TEST_FILE,
-    Y_TEST_FILE,
-    X_TRAIN_FILE,
-    Y_TRAIN_FILE,
+    TRAIN_TEST_DATA_FILE,
 )
 
 ###################################
@@ -30,11 +27,11 @@ data_gold_path = TRAINING_GOLD_DATA_FILE
 data_version = DATA_VERSION
 #experiment_name = current_date
 
-
+##### Should look into where these are created and if they can be referenced #####
 os.makedirs("artifacts", exist_ok=True)
 os.makedirs("mlruns", exist_ok=True)
 os.makedirs("mlruns/.trash", exist_ok=True)
-
+####################################################
 
 mlflow.set_experiment(experiment_name)
 
@@ -79,11 +76,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 y_train
 
-# with open('train_test_data.pkl', 'wb') as f:
-#     pickle.dump((X_train, X_test, y_train, y_test), f)
+with open(TRAIN_TEST_DATA_FILE, 'wb') as f:
+    pickle.dump((X_train, X_test, y_train, y_test), f)
 
-X_train.to_csv(X_TRAIN_FILE)
-X_test.to_csv(X_TEST_FILE)
-y_train.to_csv(Y_TRAIN_FILE)
-y_test.to_csv(Y_TEST_FILE)
 

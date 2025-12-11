@@ -23,10 +23,7 @@ RAW_DATA_FILE = RAW_DATA_DIR / "raw_data.csv"
 DATA_FILTERED_FILE = INTERIM_DATA_DIR / "data_filtered.csv"
 TRAINING_DATA_FILE = PROCESSED_DATA_DIR / "training_data.csv"
 TRAINING_GOLD_DATA_FILE = PROCESSED_DATA_DIR / "train_data_gold.csv"
-X_TRAIN_FILE = PROCESSED_DATA_DIR / "x_train.csv"
-Y_TRAIN_FILE = PROCESSED_DATA_DIR / "y_train.csv"
-X_TEST_FILE = PROCESSED_DATA_DIR / "x_test.csv"
-Y_TEST_FILE  = PROCESSED_DATA_DIR / "y_test.csv"
+TRAIN_TEST_DATA_FILE = PROCESSED_DATA_DIR / "train_test_data.pkl"
 
 #### Artifacts #####
 DATE_LIMITS_FILE = ARTIFACTS_DIR / "date_limits.json"

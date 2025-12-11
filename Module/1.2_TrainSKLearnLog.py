@@ -16,29 +16,26 @@ import json
 import warnings
 
 from config import (
-    X_TRAIN_FILE,
-    X_TEST_FILE,
-    Y_TRAIN_FILE,
-    Y_TEST_FILE,
+    TRAIN_TEST_DATA_FILE,
     LEAD_MODEL_LR_PATH,
     MODEL_RESULTS_PATH,
     COLUMNS_LIST_FILE,
+    DATA_VERSION
 )
 
 warnings.filterwarnings('ignore')
 pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
-# with open('train_test_data.pkl', 'rb') as f:
-#     X_train, X_test, y_train, y_test = pickle.load(f)
 
 ################## Constants used
 column_list_path = COLUMNS_LIST_FILE
-X_train = X_TRAIN_FILE,
-X_test = X_TEST_FILE,
-y_train = Y_TRAIN_FILE,
-y_test = Y_TEST_FILE
+
 lr_model_path = LEAD_MODEL_LR_PATH
 model_results_path = MODEL_RESULTS_PATH
+data_version = DATA_VERSION
+
+with open(TRAIN_TEST_DATA_FILE, 'rb') as f:
+    X_train, X_test, y_train, y_test = pickle.load(f)
 ##########################
 
 
@@ -82,7 +79,7 @@ with mlflow.start_run(experiment_id=experiment_id) as run:
     # log artifacts
     mlflow.log_metric('f1_score', f1_score(y_test, y_pred_test))
     mlflow.log_artifacts("artifacts", artifact_path="model")
-    mlflow.log_param("data_version", "00000")
+    mlflow.log_param("data_version", data_version)
     
     # store model for model interpretability
     joblib.dump(value=model, filename=lr_model_path)

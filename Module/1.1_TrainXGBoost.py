@@ -14,10 +14,7 @@ import json
 import warnings
 
 from config import (
-    X_TRAIN_FILE,
-    X_TEST_FILE,
-    Y_TRAIN_FILE,
-    Y_TEST_FILE,
+    TRAIN_TEST_DATA_FILE,
     XGBOOST_MODEL_PATH,
     MODEL_RESULTS_PATH,
 )
@@ -26,17 +23,15 @@ warnings.filterwarnings('ignore')
 pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
 ################## Constants used
-X_train = X_TRAIN_FILE,
-X_test = X_TEST_FILE,
-y_train = Y_TRAIN_FILE,
-y_test = Y_TEST_FILE
 xgboost_model_path = XGBOOST_MODEL_PATH
 model_results_path = MODEL_RESULTS_PATH
+
+with open(TRAIN_TEST_DATA_FILE, 'rb') as f:
+    X_train, X_test, y_train, y_test = pickle.load(f)
 ##########################
 
 
-# with open('train_test_data.pkl', 'rb') as f:
-#     X_train, X_test, y_train, y_test = pickle.load(f)
+
 
 ###################################
 parser = argparse.ArgumentParser()
@@ -92,7 +87,7 @@ xgboost_model = model_grid.best_estimator_
 xgboost_model.save_model(xgboost_model_path)
 
 model_results = {
-    xgboost_model_path: classification_report(y_train, y_pred_train, output_dict=True)
+    str(xgboost_model_path): classification_report(y_train, y_pred_train, output_dict=True)
 }
 
 #saving model scores
