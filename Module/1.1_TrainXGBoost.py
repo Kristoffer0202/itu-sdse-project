@@ -13,12 +13,30 @@ from pprint import pprint
 import json
 import warnings
 
+from config import (
+    X_TRAIN_FILE,
+    X_TEST_FILE,
+    Y_TRAIN_FILE,
+    Y_TEST_FILE,
+    XGBOOST_MODEL_PATH,
+    MODEL_RESULTS_PATH,
+)
 
 warnings.filterwarnings('ignore')
 pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
-with open('train_test_data.pkl', 'rb') as f:
-    X_train, X_test, y_train, y_test = pickle.load(f)
+################## Constants used
+X_train = X_TRAIN_FILE,
+X_test = X_TEST_FILE,
+y_train = Y_TRAIN_FILE,
+y_test = Y_TEST_FILE
+xgboost_model_path = XGBOOST_MODEL_PATH
+model_results_path = MODEL_RESULTS_PATH
+##########################
+
+
+# with open('train_test_data.pkl', 'rb') as f:
+#     X_train, X_test, y_train, y_test = pickle.load(f)
 
 ###################################
 parser = argparse.ArgumentParser()
@@ -27,8 +45,6 @@ args = parser.parse_args()
 print("Run name:", args.run_name)
 experiment_name = args.run_name
 ###################################
-
-
 
 
 
@@ -73,7 +89,6 @@ print("Classification report\n")
 print(classification_report(y_train, y_pred_train),'\n')
 
 xgboost_model = model_grid.best_estimator_
-xgboost_model_path = "./artifacts/lead_model_xgboost.json"
 xgboost_model.save_model(xgboost_model_path)
 
 model_results = {
@@ -81,6 +96,5 @@ model_results = {
 }
 
 #saving model scores
-model_results_path = "./artifacts/model_results.json"
 with open(model_results_path, 'w+') as results_file:
     json.dump(model_results, results_file)

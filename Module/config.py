@@ -11,30 +11,45 @@ PROJ_ROOT = Path(__file__).resolve().parents[1]
 logger.info(f"PROJ_ROOT path is: {PROJ_ROOT}")
 
 DATA_DIR = PROJ_ROOT / "data"
-ARTIFACTS_DIR = PROJ_ROOT / "notebooks/artifacts"
+ARTIFACTS_DIR = PROJ_ROOT / "artifacts"
 
 RAW_DATA_DIR = DATA_DIR / "raw"
 INTERIM_DATA_DIR = DATA_DIR / "interim"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 EXTERNAL_DATA_DIR = DATA_DIR / "external"
 
+##### Data files #####
 RAW_DATA_FILE = RAW_DATA_DIR / "raw_data.csv"
-DATE_LIMITS_FILE = ARTIFACTS_DIR / "date_limits.json"
 DATA_FILTERED_FILE = INTERIM_DATA_DIR / "data_filtered.csv"
+TRAINING_DATA_FILE = PROCESSED_DATA_DIR / "training_data.csv"
+TRAINING_GOLD_DATA_FILE = PROCESSED_DATA_DIR / "train_data_gold.csv"
+X_TRAIN_FILE = PROCESSED_DATA_DIR / "x_train.csv"
+Y_TRAIN_FILE = PROCESSED_DATA_DIR / "y_train.csv"
+X_TEST_FILE = PROCESSED_DATA_DIR / "x_test.csv"
+Y_TEST_FILE  = PROCESSED_DATA_DIR / "y_test.csv"
+
+#### Artifacts #####
+DATE_LIMITS_FILE = ARTIFACTS_DIR / "date_limits.json"
 COLUMNS_DRIFT_FILE = ARTIFACTS_DIR / "columns_drift.json"
 SCALE_FILE = ARTIFACTS_DIR / "scaler.pkl"
 OUTLIER_SUMMARY_FILE = ARTIFACTS_DIR / "outlier_summary.json"
 CAT_MISSING_IMPUTE_FILE = ARTIFACTS_DIR / "cat_missing_impute.csv"
-TRAINING_DATA_FILE = PROCESSED_DATA_DIR / "training_data.csv"
-TRAINING_GOLD_DATA_FILE = PROCESSED_DATA_DIR / "train_data_gold.csv"
+COLUMNS_LIST_FILE = ARTIFACTS_DIR / "columns_list.json"
 
+#### Regular non-path contants #####
 MAX_DATE = "2024-01-31"
 MIN_DATE = "2024-01-01"
 DATA_VERSION = "00000"
 CURRENT_DATE = datetime.datetime.now().strftime("%Y_%B_%d")
 EXPERIMENT_NAME = CURRENT_DATE
 
+##### Model related #####
 MODELS_DIR = PROJ_ROOT / "models"
+
+XGBOOST_MODEL_PATH = MODELS_DIR / "lead_model_xgboost.json"
+LEAD_MODEL_LR_PATH = MODELS_DIR / "lead_model_lr.pkl"
+MODEL_RESULTS_PATH = MODELS_DIR / "model_results.json"
+
 
 REPORTS_DIR = PROJ_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"

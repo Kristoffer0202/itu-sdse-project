@@ -74,7 +74,7 @@ func Build(ctx context.Context, experiment string) error {
 		}
 	}
 	// Export output if needed
-	_, err = python.Directory("artifacts").Export(ctx, "artifacts")
+	_, err = python.Directory("models").Export(ctx, "models_also")
 	if err != nil {
 		return err
 	}

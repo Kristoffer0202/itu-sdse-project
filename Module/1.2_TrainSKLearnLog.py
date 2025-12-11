@@ -15,13 +15,31 @@ import pandas as pd
 import json
 import warnings
 
+from config import (
+    X_TRAIN_FILE,
+    X_TEST_FILE,
+    Y_TRAIN_FILE,
+    Y_TEST_FILE,
+    LEAD_MODEL_LR_PATH,
+    MODEL_RESULTS_PATH,
+    COLUMNS_LIST_FILE,
+)
 
 warnings.filterwarnings('ignore')
 pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
-with open('train_test_data.pkl', 'rb') as f:
-    X_train, X_test, y_train, y_test = pickle.load(f)
+# with open('train_test_data.pkl', 'rb') as f:
+#     X_train, X_test, y_train, y_test = pickle.load(f)
 
+################## Constants used
+column_list_path = COLUMNS_LIST_FILE
+X_train = X_TRAIN_FILE,
+X_test = X_TEST_FILE,
+y_train = Y_TRAIN_FILE,
+y_test = Y_TEST_FILE
+lr_model_path = LEAD_MODEL_LR_PATH
+model_results_path = MODEL_RESULTS_PATH
+##########################
 
 
 ###################################
@@ -46,7 +64,6 @@ experiment_id = mlflow.get_experiment_by_name(experiment_name).experiment_id
 
 with mlflow.start_run(experiment_id=experiment_id) as run:
     model = LogisticRegression()
-    lr_model_path = "./artifacts/lead_model_lr.pkl"
 
     params = {
               'solver': ["newton-cg", "lbfgs", "liblinear", "sag", "saga"],
@@ -97,37 +114,18 @@ print("Classification report\n")
 print(classification_report(y_train, y_pred_train),'\n')
 
 
+model_results_path[lr_model_path] = model_classification_report
+print(model_classification_report["weighted avg"]["f1-score"])
 
+with open(column_list_path, 'w+') as columns_file:
+    columns = {'column_names': list(X_train.columns)}
+    pprint(columns)
+    json.dump(columns, columns_file)
 
+print('Saved column list to ', column_list_path)
 
-
-
-### old saving model scores
-# model_results[lr_model_path] = model_classification_report
-# print(model_classification_report["weighted avg"]["f1-score"])
-
-# column_list_path = './artifacts/columns_list.json'
-# with open(column_list_path, 'w+') as columns_file:
-#     columns = {'column_names': list(X_train.columns)}
-#     pprint(columns)
-#     json.dump(columns, columns_file)
-
-# print('Saved column list to ', column_list_path)
-
-# model_results_path = "./artifacts/model_results.json"
-
-# with open(model_results_path, 'w+') as results_file:
-#     json.dump(model_results, results_file)
-
-
-with open("./artifacts/model_results.json", 'r') as results_file:
-    model_results = json.load(results_file)
-
-model_classification_report = classification_report(y_test, y_pred_test, output_dict=True)
-model_results[lr_model_path] = model_classification_report
-
-model_results_path = "./artifacts/model_results.json"
 with open(model_results_path, 'w+') as results_file:
-    json.dump(model_results, results_file)
+    json.dump(model_results_path, results_file)
+
 
 
