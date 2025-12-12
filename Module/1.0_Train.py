@@ -32,7 +32,7 @@ data_version = DATA_VERSION
 os.makedirs("artifacts", exist_ok=True)
 os.makedirs("mlruns", exist_ok=True)
 os.makedirs("mlruns/.trash", exist_ok=True)
-os.makedirs(str(MODELS_DIR), exist_ok=True)
+os.makedirs(MODELS_DIR, exist_ok=True)
 ####################################################
 
 mlflow.set_experiment(experiment_name)

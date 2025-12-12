@@ -8,7 +8,7 @@ import pandas as pd
 from mlflow.tracking import MlflowClient
 import json
 
-from config import MODEL_RESULTS_PATH
+from config import MODEL_RESULTS_PATH, ARTIFACTS_DIR
 
 #  Constants used: #################################
 model_results_path = MODEL_RESULTS_PATH
