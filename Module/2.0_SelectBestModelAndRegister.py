@@ -8,11 +8,18 @@ import pandas as pd
 from mlflow.tracking import MlflowClient
 import json
 
-
+from config import MODEL_RESULTS_PATH
 
 #  Constants used:
+model_results_path = MODEL_RESULTS_PATH
+with open(model_results_path, 'r') as results_file:
+    model_results = json.load(results_file)
+
 artifact_path = "model"
 model_name = "lead_model"
+
+# with open("./artifacts/model_results.json", "r") as f:
+#     model_results = json.load(f)
 
 
 ###################################
@@ -49,8 +56,7 @@ experiment_best = mlflow.search_runs(
 experiment_best
 
 
-with open("./artifacts/model_results.json", "r") as f:
-    model_results = json.load(f)
+
 results_df = pd.DataFrame({model: val["weighted avg"] for model, val in model_results.items()}).T
 results_df
 

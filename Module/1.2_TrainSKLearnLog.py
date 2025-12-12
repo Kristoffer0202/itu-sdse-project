@@ -29,12 +29,15 @@ pd.set_option('display.float_format',lambda x: "%.3f" % x)
 
 ################## Constants used
 column_list_path = COLUMNS_LIST_FILE
-
+train_test_data_path = TRAIN_TEST_DATA_FILE
 lr_model_path = LEAD_MODEL_LR_PATH
 model_results_path = MODEL_RESULTS_PATH
 data_version = DATA_VERSION
 
-with open(TRAIN_TEST_DATA_FILE, 'rb') as f:
+with open(model_results_path, 'r') as results_file:
+    model_results = json.load(results_file)
+
+with open(train_test_data_path, 'rb') as f:
     X_train, X_test, y_train, y_test = pickle.load(f)
 ##########################
 
@@ -111,7 +114,7 @@ print("Classification report\n")
 print(classification_report(y_train, y_pred_train),'\n')
 
 
-model_results_path[lr_model_path] = model_classification_report
+model_results[str(lr_model_path)] = model_classification_report
 print(model_classification_report["weighted avg"]["f1-score"])
 
 with open(column_list_path, 'w+') as columns_file:
@@ -122,7 +125,7 @@ with open(column_list_path, 'w+') as columns_file:
 print('Saved column list to ', column_list_path)
 
 with open(model_results_path, 'w+') as results_file:
-    json.dump(model_results_path, results_file)
+    json.dump(model_results, results_file)
 
 
 
