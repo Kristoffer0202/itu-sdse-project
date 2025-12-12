@@ -11,6 +11,7 @@ from config import (
     PROJ_ROOT,
     MAX_DATE,
     MIN_DATE,
+    ARTIFACTS_DIR
     )
 
 ######## Constants used
@@ -18,7 +19,7 @@ max_date = MAX_DATE
 min_date = MIN_DATE
 ########################
 
-os.makedirs("artifacts",exist_ok=True)
+os.makedirs(ARTIFACTS_DIR,exist_ok=True)
 print("Created artifacts directory")
 
 warnings.filterwarnings('ignore')

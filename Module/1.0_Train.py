@@ -29,7 +29,7 @@ data_version = DATA_VERSION
 #experiment_name = current_date
 
 ##### Should look into where these are created and if they can be referenced #####
-os.makedirs("artifacts", exist_ok=True)
+#os.makedirs("artifacts", exist_ok=True)
 os.makedirs("mlruns", exist_ok=True)
 os.makedirs("mlruns/.trash", exist_ok=True)
 os.makedirs(MODELS_DIR, exist_ok=True)
