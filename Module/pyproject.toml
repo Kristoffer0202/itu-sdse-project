@@ -7,4 +7,4 @@ name = "Module"
 version = "0.1.0"
 description = "My local module"
 authors = [{name="elhekrisc"}]
-dependencies = []  # put PyPI dependencies if any
+dependencies = []  
