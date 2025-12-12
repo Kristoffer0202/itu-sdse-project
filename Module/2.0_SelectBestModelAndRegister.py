@@ -10,17 +10,14 @@ import json
 
 from config import MODEL_RESULTS_PATH
 
-#  Constants used:
+#  Constants used: #################################
 model_results_path = MODEL_RESULTS_PATH
 with open(model_results_path, 'r') as results_file:
     model_results = json.load(results_file)
 
 artifact_path = "model"
 model_name = "lead_model"
-
-# with open("./artifacts/model_results.json", "r") as f:
-#     model_results = json.load(f)
-
+#################################
 
 ###################################
 parser = argparse.ArgumentParser()
