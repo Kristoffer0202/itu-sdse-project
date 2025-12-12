@@ -11,6 +11,7 @@ from config import (
     TRAINING_GOLD_DATA_FILE,
     DATA_VERSION,
     TRAIN_TEST_DATA_FILE,
+    MODELS_DIR,
 )
 
 ###################################
@@ -31,6 +32,7 @@ data_version = DATA_VERSION
 os.makedirs("artifacts", exist_ok=True)
 os.makedirs("mlruns", exist_ok=True)
 os.makedirs("mlruns/.trash", exist_ok=True)
+os.makedirs(str(MODELS_DIR), exist_ok=True)
 ####################################################
 
 mlflow.set_experiment(experiment_name)
