@@ -3,6 +3,7 @@ import datetime
 from dotenv import load_dotenv
 from loguru import logger
 
+# Simply making a change to trigger a new commit
 # Load environment variables from .env file if it exists
 load_dotenv()
 
