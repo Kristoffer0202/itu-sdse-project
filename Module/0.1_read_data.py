@@ -54,5 +54,5 @@ with open(DATE_LIMITS_FILE, "w") as f:
     json.dump(date_limits, f) # Save date intervals
 
 filtered_data = data
-filtered_data.to_csv(DATA_FILTERED_FILE)
+filtered_data.to_csv(DATA_FILTERED_FILE, index=False)
     
