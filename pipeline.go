@@ -42,7 +42,7 @@ func Build(ctx context.Context, experiment string) error {
 	// Scripts in order
 	scripts := []string{
 		"0.1_read_data.py",
-		"0.2_data_preprocessing.py",
+		"0.2_data_preprocessing_copy_test.py",
 		"1.0_Train.py",
 		"1.1_TrainXGBoost.py",
 		"1.2_TrainSKLearnLog.py",
