@@ -5,8 +5,6 @@ model_name = "lead_model"
 
 
 
-
-
 model_version = 1
 
 

@@ -28,12 +28,15 @@ jobs:
           verb: run
           args: go run pipeline.go
           version: "0.19.6"
+          
+      - name: Rename model
+        run: cp models/lead_model_lr.pkl models/model.pkl
 
       - name: Upload models artifact
         uses: actions/upload-artifact@v4
         with:
           name: model
-          path: models/lead_model_lr.pkl
+          path: models/model.pkl
  
   test:
     needs: dagger
