@@ -28,9 +28,9 @@ jobs:
           verb: run
           args: go run pipeline.go
           version: "0.19.6"
-          
+
       - name: Upload models artifact
         uses: actions/upload-artifact@v4
         with:
           name: models
-          path: models/
+          path: models/lead_model_lr.pkl
