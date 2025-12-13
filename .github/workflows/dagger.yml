@@ -34,3 +34,13 @@ jobs:
         with:
           name: models
           path: models/lead_model_lr.pkl
+ 
+  test:
+    needs: dagger
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run Model Inference Test Action
+      uses: lasselundstenjensen/itu-sdse-project-model-validator@main
