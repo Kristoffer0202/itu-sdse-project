@@ -78,6 +78,14 @@ func Build(ctx context.Context, experiment string) error {
 	if err != nil {
 		return err
 	}
+	_, err = python.Directory("/src/artifacts").Export(ctx, "artifacts")
+	if err != nil {
+		return err
+	}
+	_, err = python.Directory("/src/data").Export(ctx, "data")
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
