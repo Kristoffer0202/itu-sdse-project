@@ -71,3 +71,28 @@ Repository for MLOps exam
 
 --------
 
+# How to Run the Project
+The project can be made to generate the model-artifact in two ways. 
+
+## Github Workflow (Recommended)
+The github worklow only stores the artifact for the ```lead_model_lr.pkl```  as ```model.pkl``` saved in a zip called ```model.zip```. To generate the zip do the follwing:
+- Navigate to the repo on the github website (https://github.com/Kristoffer0202/itu-sdse-project)
+- Enter the "Actions" tab
+- Go to "Run Dagger Pipeline"
+- Press "Run Workflow"
+- Once finished, the model can be dowloaded from the Artifacts field under the finshed job summary
+
+
+
+## Locally 
+The python dependencies themself will be taken care of automatically via the Go Pipline. But to succesfully run the pipeline these are requried:
+- Dagger: x.x.x
+- go: x.x.x
+- Python x.x.x
+- Docker x.x.x
+
+To then run the pipline and generate the artifact you must simply navigate to the project reposetory root, and execute the following line of code:
+
+```dagger run go run pipeline.go```
+
+The artifacts will the ne generated and stores in your ```Models``` folder.
