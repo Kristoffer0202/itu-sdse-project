@@ -9,10 +9,7 @@ Repository for MLOps exam
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-│
+
 ├── .dvc 
 │   └──config          <- Contains reference to remote for dvc data pull
 │
@@ -31,16 +28,6 @@ Repository for MLOps exam
 ├── docs               <- A default mkdocs project; see www.mkdocs.org for details
 │
 ├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         Module and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
 │
 │
 ├── Module             <- Source code for use in this project.
@@ -67,16 +54,26 @@ Repository for MLOps exam
 │    └── util.py                                 <- Utility helper functions used by scripts
 │
 │
+├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+│
+│
 ├── go.mod
 │
 ├── go.sum
 │
 ├── pipeline.go
 │
-├──
+├── LICENSE            <- Open-source license if one is chosen
 │
-├──
-└── 
+├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
+│
+├── pyproject.toml     <- Project configuration file with package metadata for 
+│                         Module and configuration for tools like black
+│
+├── README.md          <- The top-level README for developers using this project.
+│
+└── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
+                        generated with `pip freeze > requirements.txt`
 
 
 ```
