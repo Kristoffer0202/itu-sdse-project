@@ -25,6 +25,8 @@ Repository for MLOps exam
 ├── .github/workflows  <- Github Action Workflows
 │   └── dagger.yml         <- Workflow file that trains, tests and outputs models 
 │
+├── artifacts          <- Contains model artifacts
+│
 ├── docs               <- A default mkdocs project; see www.mkdocs.org for details
 │
 ├── models             <- Trained and serialized models, model predictions, or model summaries
