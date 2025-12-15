@@ -72,7 +72,7 @@ Repository for MLOps exam
 --------
 
 # How to Run the Project
-The project can be made to generate the model-artifact in two ways. 
+The project can be made to generate the model-artifact in two ways. The Github workflow is the recommended method and only generates the model itself. The project can be run locally if all data, artifacs and models are desired. 
 
 ## Github Workflow (Recommended)
 The github worklow only stores the artifact for the ```lead_model_lr.pkl```  as ```model.pkl``` saved in a zip called ```model.zip```. To generate the zip do the follwing:
@@ -95,4 +95,4 @@ To then run the pipline and generate the artifact you must simply navigate to th
 
 ```dagger run go run pipeline.go```
 
-The artifacts will the ne generated and stores in your ```Models``` folder.
+All artifacts, models and data will then be generated and stored in their respective folders. 
