@@ -41,20 +41,20 @@ func Build(ctx context.Context, experiment string) error {
 
 	// Scripts in order
 	scripts := []string{
-		"0.1_read_data.py",
-		"0.2_data_preprocessing_copy_test.py",
-		"1.0_Train.py",
-		"1.1_TrainXGBoost.py",
-		"1.2_TrainSKLearnLog.py",
+		"0.0_read_data.py",
+		"0.1_data_preprocessing.py",
+		"0.2_generate_train_test_data.py",
+		"1.0_TrainXGBoost.py",
+		"1.1_TrainSKLearnLR.py",
 		"2.0_SelectBestModelAndRegister.py",
 		"3.0_Deploy.py",
 	}
 
 	// Scripts that need timestamp experiment name
 	trainingScripts := map[string]bool{
-		"1.0_Train.py":                      true,
-		"1.1_TrainXGBoost.py":               true,
-		"1.2_TrainSKLearnLog.py":            true,
+		"0.2_generate_train_test_data.py":   true,
+		"1.0_TrainXGBoost.py":               true,
+		"1.1_TrainSKLearnLR.py":             true,
 		"2.0_SelectBestModelAndRegister.py": true,
 	}
 
