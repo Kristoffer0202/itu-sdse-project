@@ -24,11 +24,9 @@ Repository for MLOps exam
 │   ├── processed      <- The final, canonical data sets for modeling.
 │   └── raw            <- The original, immutable data dump.
 │
-│
 ├── docs               <- A default mkdocs project; see www.mkdocs.org for details
 │
 ├── models             <- Trained and serialized models, model predictions, or model summaries
-│
 │
 ├── Module             <- Source code for use in this project.
 │    │
@@ -48,11 +46,9 @@ Repository for MLOps exam
 │    │
 │    ├── 3.0_Deploy.py                           <- Deploys model (Not necessary, but used since it was in main.ipynb)
 │    │
-│    │
 │    ├── config.py                               <- Script containing file and path references
 │    │
 │    └── util.py                                 <- Utility helper functions used by scripts
-│
 │
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
@@ -60,11 +56,11 @@ Repository for MLOps exam
 │
 ├── go.sum             <- Locks versions with checksums to ensure integrity
 │
-├── pipeline.go        <- Dagger workflow pipeline
-│
 ├── LICENSE            <- Open-source license
 │
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
+│
+├── pipeline.go        <- Dagger workflow pipeline
 │
 ├── pyproject.toml     <- Project configuration file with package metadata for 
 │                         Module and configuration for tools like black
@@ -73,8 +69,6 @@ Repository for MLOps exam
 │
 └── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
                         generated with `pip freeze > requirements.txt`
-
-
 ```
 
 --------
