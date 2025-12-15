@@ -12,12 +12,6 @@ Repository for MLOps exam
 ├── LICENSE            <- Open-source license if one is chosen
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
 │
 ├── .dvc 
 │   └──config          <- Contains reference to remote for dvc data pull
@@ -26,6 +20,13 @@ Repository for MLOps exam
 │   └── dagger.yml         <- Workflow file that trains, tests and outputs models 
 │
 ├── artifacts          <- Contains model artifacts
+│
+├── data
+│   ├── external       <- Data from third party sources.
+│   ├── interim        <- Intermediate data that has been transformed.
+│   ├── processed      <- The final, canonical data sets for modeling.
+│   └── raw            <- The original, immutable data dump.
+│
 │
 ├── docs               <- A default mkdocs project; see www.mkdocs.org for details
 │
@@ -42,28 +43,42 @@ Repository for MLOps exam
 │                         generated with `pip freeze > requirements.txt`
 │
 │
-└── Module             <- Source code for use in this project.
-    │
-    ├── __init__.py                             <- Makes Module a Python module
-    │
-    ├── 0.0_read_data.py                        <- Pulls dvc data and filters range by date
-    │
-    ├── 0.1_data_preprocessing.py               <- Preprocessing of data and generates gold data file
-    │
-    ├── 0.3_generate_train_test_data.py         <- Splits processed data into train and test
-    │
-    ├── 1.0_TrainXGBoost.py                     <- Trains and tests XGBoost model
-    │
-    ├── 1.1_TrainSKLearnLR.py                   <- Trains and tests Logistic Regression model
-    │
-    ├── 2.0_SelectBestModelAndRegister.py       <- Selects and registers the best performning model
-    │
-    ├── 3.0_Deploy.py                           <- Deploys model (Not necessary, but used since it was in main.ipynb)
-    │
-    │
-    ├── config.py                               <- Script containing file and path references
-    │
-    └── util.py                                 <- Utility helper functions used by scripts
+├── Module             <- Source code for use in this project.
+│    │
+│    ├── __init__.py                             <- Makes Module a Python module
+│    │
+│    ├── 0.0_read_data.py                        <- Pulls dvc data and filters range by date
+│    │
+│    ├── 0.1_data_preprocessing.py               <- Preprocessing of data and generates gold data file
+│    │
+│    ├── 0.3_generate_train_test_data.py         <- Splits processed data into train and test
+│    │
+│    ├── 1.0_TrainXGBoost.py                     <- Trains and tests XGBoost model
+│    │
+│    ├── 1.1_TrainSKLearnLR.py                   <- Trains and tests Logistic Regression model
+│    │
+│    ├── 2.0_SelectBestModelAndRegister.py       <- Selects and registers the best performning model
+│    │
+│    ├── 3.0_Deploy.py                           <- Deploys model (Not necessary, but used since it was in main.ipynb)
+│    │
+│    │
+│    ├── config.py                               <- Script containing file and path references
+│    │
+│    └── util.py                                 <- Utility helper functions used by scripts
+│
+│
+├── go.mod
+│
+├── go.sum
+│
+├── pipeline.go
+│
+├──
+│
+├──
+└── 
+
+
 ```
 
 --------
