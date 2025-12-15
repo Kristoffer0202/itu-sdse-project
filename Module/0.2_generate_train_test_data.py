@@ -47,7 +47,6 @@ def create_dummy_cols(df, col):
 
 data = pd.read_csv(data_gold_path)
 print(f"Training data length: {len(data)}")
-data.head(5)
 
 
 data = data.drop(["lead_id", "customer_code", "date_part"], axis=1)
@@ -76,7 +75,6 @@ X = data.drop(["lead_indicator"], axis=1)
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, random_state=42, test_size=0.15, stratify=y
 )
-y_train
 
 with open(TRAIN_TEST_DATA_FILE, 'wb') as f:
     pickle.dump((X_train, X_test, y_train, y_test), f)

@@ -51,7 +51,6 @@ result=data.lead_indicator.value_counts(normalize = True)
 print("Target value counter")
 for val, n in zip(result.index, result):
     print(val, ": ", n)
-data
 
 vars = [
     "lead_id", "lead_indicator", "customer_group", "onboarding", "source", "customer_code"
@@ -73,7 +72,6 @@ cont_vars = cont_vars.apply(lambda x: x.clip(lower = (x.mean()-2*x.std()),
                                              upper = (x.mean()+2*x.std())))
 outlier_summary = cont_vars.apply(describe_numeric_col).T
 outlier_summary.to_csv(OUTLIER_SUMMARY_FILE)
-outlier_summary
 
 cat_missing_impute = cat_vars.mode(numeric_only=False, dropna=True)
 cat_missing_impute.to_csv(CAT_MISSING_IMPUTE_FILE)
@@ -86,7 +84,6 @@ cont_vars.apply(describe_numeric_col).T
 cat_vars.loc[cat_vars['customer_code'].isna(),'customer_code'] = 'None'
 cat_vars = cat_vars.apply(impute_missing_values)
 cat_vars.apply(lambda x: pd.Series([x.count(), x.isnull().sum()], index = ['Count', 'Missing'])).T
-cat_vars
 
 
 
@@ -103,7 +100,6 @@ cont_vars = cont_vars.reset_index(drop=True)
 cat_vars = cat_vars.reset_index(drop=True)
 data = pd.concat([cat_vars, cont_vars], axis=1)
 print(f"Data cleansed and combined.\nRows: {len(data)}")
-data
 
 data_columns = list(data.columns)
 with open(COLUMNS_DRIFT_FILE,'w+') as f:           
