@@ -1,6 +1,11 @@
 # Data
 ##/data/
 data/raw/raw_data.csv
+data/external/
+data/interim
+data/processed
+artifacts/
+models/
 
 # Mac OS-specific storage files
 .DS_Store
