@@ -18,6 +18,11 @@ Repository for MLOps exam
 │   ├── processed      <- The final, canonical data sets for modeling.
 │   └── raw            <- The original, immutable data dump.
 │
+│
+├── .dvc               <- Open-source license if one is chosen
+│
+├── .github            <- Github Actions Workflow
+│
 ├── docs               <- A default mkdocs project; see www.mkdocs.org for details
 │
 ├── models             <- Trained and serialized models, model predictions, or model summaries
@@ -37,22 +42,29 @@ Repository for MLOps exam
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
 │
-├── setup.cfg          <- Configuration file for flake8
 │
 └── Module   <- Source code for use in this project.
     │
     ├── __init__.py             <- Makes Module a Python module
     │
-    ├── config.py               <- Store useful variables and configuration
+    ├── 0.1_read_data.py               <- Store useful variables and configuration
     │
-    ├── dataset.py              <- Scripts to download or generate data
+    ├── 0.2_data_preprocessing.py          <- Scripts to download or generate data
     │
-    ├── features.py             <- Code to create features for modeling
+    ├── 1.0_Train.py             <- Code to create features for modeling
     │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
+    ├── 1.1_TrainXGBoost.py               <- Store useful variables and configuration
+    │
+    ├── 1.2_TrainSKLearnLog.py               <- Store useful variables and configuration
+    │
+    ├── 2.0_SelectBestModelAndRegister.py               <- Store useful variables and configuration
+    │
+    ├── 3.0_Deploy.py               <- Store useful variables and configuration
+    │
+    │
+    ├── config.py             <- Code to create features for modeling
+    │
+    ├── util.py  
     │
     └── plots.py                <- Code to create visualizations
 ```
