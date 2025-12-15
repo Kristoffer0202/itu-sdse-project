@@ -50,8 +50,6 @@ Repository for MLOps exam
 │    │
 │    └── util.py                                 <- Utility helper functions used by scripts
 │
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
 ├── go.mod             <- file to define the module and required dependencies
 │
 ├── go.sum             <- Locks versions with checksums to ensure integrity
