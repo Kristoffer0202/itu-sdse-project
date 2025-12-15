@@ -20,10 +20,10 @@ Repository for MLOps exam
 │
 │
 ├── .dvc 
-│   └──config              <- Contains reference to remote for dvc data pull
+│   └──config          <- Contains reference to remote for dvc data pull
 │
-├── .github/workflows           <- Github Action Workflows
-│   └── dagger.yml              <- Workflow file that trains, tests and outputs models 
+├── .github/workflows  <- Github Action Workflows
+│   └── dagger.yml         <- Workflow file that trains, tests and outputs models 
 │
 ├── docs               <- A default mkdocs project; see www.mkdocs.org for details
 │
@@ -40,28 +40,28 @@ Repository for MLOps exam
 │                         generated with `pip freeze > requirements.txt`
 │
 │
-└── Module   <- Source code for use in this project.
+└── Module             <- Source code for use in this project.
     │
-    ├── __init__.py             <- Makes Module a Python module
+    ├── __init__.py                             <- Makes Module a Python module
     │
-    ├── 0.1_read_data.py               <- Store useful variables and configuration
+    ├── 0.0_read_data.py                        <- Pulls dvc data and filters range by date
     │
-    ├── 0.2_data_preprocessing.py          <- Scripts to download or generate data
+    ├── 0.1_data_preprocessing.py               <- Preprocessing of data and generates gold data file
     │
-    ├── 1.0_Train.py             <- Code to create features for modeling
+    ├── 0.3_generate_train_test_data.py         <- Splits processed data into train and test
     │
-    ├── 1.1_TrainXGBoost.py               <- Store useful variables and configuration
+    ├── 1.0_TrainXGBoost.py                     <- Trains and tests XGBoost model
     │
-    ├── 1.2_TrainSKLearnLog.py               <- Store useful variables and configuration
+    ├── 1.1_TrainSKLearnLR.py                   <- Trains and tests Logistic Regression model
     │
-    ├── 2.0_SelectBestModelAndRegister.py               <- Store useful variables and configuration
+    ├── 2.0_SelectBestModelAndRegister.py       <- Selects and registers the best performning model
     │
-    ├── 3.0_Deploy.py               <- Store useful variables and configuration
+    ├── 3.0_Deploy.py                           <- Deploys model (Not necessary, but used since it was in main.ipynb)
     │
     │
-    ├── config.py             <- Code to create features for modeling
+    ├── config.py                               <- Script containing file and path references
     │
-    └── util.py  
+    └── util.py                                 <- Utility helper functions used by scripts
 ```
 
 --------
