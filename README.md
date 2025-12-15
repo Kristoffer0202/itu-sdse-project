@@ -56,14 +56,13 @@ Repository for MLOps exam
 │
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
+├── go.mod             <- file to define the module and required dependencies
 │
-├── go.mod
+├── go.sum             <- Locks versions with checksums to ensure integrity
 │
-├── go.sum
+├── pipeline.go        <- Dagger workflow pipeline
 │
-├── pipeline.go
-│
-├── LICENSE            <- Open-source license if one is chosen
+├── LICENSE            <- Open-source license
 │
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 │
