@@ -56,8 +56,6 @@ Repository for MLOps exam
 │
 ├── LICENSE            <- Open-source license
 │
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-│
 ├── pipeline.go        <- Dagger workflow pipeline
 │
 ├── pyproject.toml     <- Project configuration file with package metadata for 
