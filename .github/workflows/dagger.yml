@@ -18,7 +18,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v6
         with:
-          go-version: 1.25.4
+          go-version: 1.25.0
           cache: false
 
       - name: Run Dagger pipeline
@@ -27,7 +27,7 @@ jobs:
           workdir: .
           verb: run
           args: go run pipeline.go
-          version: "0.19.6"
+          version: "0.19.8"
           
       - name: Rename model
         run: cp models/lead_model_lr.pkl models/model.pkl
