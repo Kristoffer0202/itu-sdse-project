@@ -84,10 +84,10 @@ The github worklow only stores the artifact for the ```lead_model_lr.pkl```  as 
 
 ## Locally 
 The python dependencies themself will be taken care of automatically via the Go Pipline. But to succesfully run the pipeline these are requried:
-- Dagger: x.x.x
-- go: x.x.x
-- Python x.x.x
-- Docker x.x.x
+- Dagger: 0.19.8
+- go: 1.25.0
+- Python 3.12.2
+- Docker 28.5.1
 
 To then run the pipline and generate the artifact you must simply navigate to the project reposetory root, and execute the following line of code:
 
