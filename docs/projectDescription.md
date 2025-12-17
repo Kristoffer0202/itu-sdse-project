@@ -4,7 +4,7 @@
 
 Based on the input provided (see below), fork the repository and restructure the code to adhere to the concepts and ideas you have seen throughout the course.  The diagram below provides a detailed overview of the structure that the solution is expected to follow.   
 
-![Project architecture](./docs/project-architecture.png)
+![Project architecture](project-architecture.png)
 
 For the exam submission, we expect you to submit a pdf containing:
 - the list of members of the group
